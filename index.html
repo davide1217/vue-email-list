@@ -14,12 +14,12 @@
   <div id="app">
     <ul>
 
-      <li v-if="!loaded">Loading....</li>
+      <li v-if="emails.length != emailsNumber">Loading....</li>
 
       <li v-else
        v-for="email in emails">{{ email }}
       </li>
-      
+
       </ul>
 
   </div>

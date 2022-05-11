@@ -7,7 +7,8 @@ const app = new Vue({
 
     emails: [],
 
-    loaded: false,
+    emailsNumber: 10,
+
   },
 
   mounted() {
@@ -20,7 +21,7 @@ const app = new Vue({
     
     emailGenerator() {
       
-      for(let i = 0; i < 10; i++) {
+      for(let i = 0; i < this.emailsNumber; i++) {
         axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
         .then((resp) => {
 
@@ -28,12 +29,6 @@ const app = new Vue({
           
         });
       }
-
-      setTimeout(() => {
-        
-        this.loaded = true;
-        
-      }, 3000)
 
     },
 
